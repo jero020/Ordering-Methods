@@ -3,6 +3,8 @@
 #include <chrono>
 #include <algorithm>
 #include "Leerdatos.h"
+#include "BubbleSort.h"
+
 
 long long TimeSorting() {
     std::vector<int> a = {5, 3, 8, 1, 2};
@@ -15,10 +17,10 @@ long long TimeSorting() {
 }
 
 int main() {
-    try {
+   try {
         std::vector<std::string> datos = leerDatos("dataset.txt");
         for (size_t i = 0; i < datos.size(); i++) {
-            std::cout << datos[i] << " " << std::endl;
+            //std::cout << datos[i] << " " << std::endl;
         }
         std::cout << std::endl;
         
@@ -26,5 +28,8 @@ int main() {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
+    //return 0;
+    TimeSorting();
+    bubbleSort;
     return 0;
 }

@@ -27,18 +27,4 @@ void printArray(int arr[], int size) {
     std::cout << std::endl;
 }
 
-// Función principal para probar el algoritmo
-int main() {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int n = sizeof(arr) / sizeof(arr[0]);
 
-    std::cout << "Arreglo original: ";
-    printArray(arr, n);
-
-    bubbleSort(arr, n);
-
-    std::cout << "Arreglo ordenado: ";
-    printArray(arr, n);
-
-    return 0;
-}
