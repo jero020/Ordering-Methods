@@ -13,6 +13,10 @@ std::vector<std::string> leerDatos(const std::string& ruta) {
     std::string linea;
     while (std::getline(archivo, linea)) {
         if (!linea.empty()) {
+            // Remover \r al final si existe (para archivos con \r\n)
+            if (!linea.empty() && linea.back() == '\r') {
+                linea.pop_back();
+            }
             datos.push_back(linea);
         }
     }
