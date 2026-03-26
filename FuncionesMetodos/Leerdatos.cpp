@@ -1,20 +1,20 @@
-#include <iostream>
+#include "../Leerdatos.h"
 #include <fstream>
-#include <vector>
-#include <string>
 #include <stdexcept>
+#include <string>
 
-std::vector<int> leerDatos() {
-    std::string ruta="dataset.txt"; // Asegúrate de que esta ruta sea correcta y el archivo exista
+std::vector<std::string> leerDatos(const std::string& ruta) {
     std::ifstream archivo(ruta);
     if (!archivo) {
         throw std::runtime_error("No se puede abrir el archivo: " + ruta);
     }
 
-    std::vector<int> datos;
-    int valor;
-    while (archivo >> valor) {
-        datos.push_back(valor);
+    std::vector<std::string> datos;
+    std::string linea;
+    while (std::getline(archivo, linea)) {
+        if (!linea.empty()) {
+            datos.push_back(linea);
+        }
     }
     return datos;
 }

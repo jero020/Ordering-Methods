@@ -1,24 +1,30 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
-#include <algorithm> // por ejemplo para std::sort
-#include "FuncionesMetodos/Leerdatos.cpp" // Asegúrate de incluir el archivo correcto para leer datos
-int main() {
-    std::vector<int> datos = leerDatos();
-    for (size_t i = 0; i < datos.size(); i++)
-    {
-        std::cout << datos[i] << " ";
-    }
-    
-}
+#include <algorithm>
+#include "Leerdatos.h"
 
-long long TimeSorting(){
-  std::vector<int> a = {5, 3, 8, 1, 2}; // ejemplo de vector a ordenarºº
-
+long long TimeSorting() {
+    std::vector<int> a = {5, 3, 8, 1, 2};
     auto t1 = std::chrono::high_resolution_clock::now();
-    std::sort(a.begin(), a.end()); // ordenamos el vector
+    std::sort(a.begin(), a.end());
     auto t2 = std::chrono::high_resolution_clock::now();
     auto dur = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-    std::cout << "Tiempo: " << dur << " microsegundos\n";
+    std::cout << "Tiempo: " << dur << " microsegundos" << std::endl;
     return dur;
+}
+
+int main() {
+    try {
+        std::vector<std::string> datos = leerDatos("dataset.txt");
+        for (size_t i = 0; i < datos.size(); i++) {
+            std::cout << datos[i] << " " << std::endl;
+        }
+        std::cout << std::endl;
+        
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
+    return 0;
 }
