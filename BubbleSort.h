@@ -3,7 +3,7 @@
 
 #include <vector>
 
-void bubbleSort(int arr[], int n);
-void printArray(int arr[], int size);
+std::vector<std::string> bubbleSort(std::vector<std::string>& arr, int n);
+void printArray(std::vector<std::string> arr, int size);
 
-#endif // BUBBLESORT_H
+#endif

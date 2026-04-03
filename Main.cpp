@@ -5,31 +5,19 @@
 #include "Leerdatos.h"
 #include "BubbleSort.h"
 
-
-long long TimeSorting() {
-    std::vector<int> a = {5, 3, 8, 1, 2};
-    auto t1 = std::chrono::high_resolution_clock::now();
-    std::sort(a.begin(), a.end());
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto dur = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-    std::cout << "Tiempo: " << dur << " microsegundos" << std::endl;
-    return dur;
-}
+std::vector<std::string> datos;
 
 int main() {
+    
    try {
-        std::vector<std::string> datos = leerDatos("dataset.txt");
-        for (size_t i = 0; i < datos.size(); i++) {
-            //std::cout << datos[i] << " " << std::endl;
+        datos = leerDatos("dataset.txt");
         }
-        std::cout << std::endl;
-        
-    } catch (const std::exception& e) {
+    catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
-    //return 0;
-    TimeSorting();
-    bubbleSort;
+     std::vector<std::string> datos2=bubbleSort(datos, datos.size());
+    printArray(datos2, datos2.size());
+
     return 0;
 }
