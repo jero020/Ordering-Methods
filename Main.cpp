@@ -8,7 +8,7 @@
 std::vector<std::string> datos;
 
 int main() {
-    
+    //std::vector<std::string>vector={"a", "caca", "bobo", "boba", "estupido", "pendejo"};
    try {
         datos = leerDatos("dataset.txt");
         }
@@ -16,7 +16,7 @@ int main() {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
-     std::vector<std::string> datos2=bubbleSort(datos, datos.size());
+    std::vector<std::string> datos2=bubbleSort(datos, datos.size());
     printArray(datos2, datos2.size());
 
     return 0;
