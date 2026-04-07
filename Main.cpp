@@ -17,10 +17,10 @@ int main() {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
-    //std::vector<std::string> datos2=bubbleSort(datos, datos.size());
-    //printArray(datos2, datos2.size());
-    std::vector<std::string> ordenado = quickSort(datos, 0, (int)datos.size() - 1);
-    printArrayQ(ordenado, ordenado.size());
-
+    std::vector<std::string> datos2=bubbleSort(datos, datos.size());
+    printArray(datos2, datos2.size());
+    std::cout << std::endl;
+    std::vector<std::string> datos3 = quickSort(datos, 0, (int)datos.size() - 1);
+    printArrayQ(datos3, datos3.size());
     return 0;
 }
