@@ -27,4 +27,9 @@ std::vector<std::string> quickSort(std::vector<std::string>& arr, int low, int h
 }
 
 
-void printArrayQ(std::vector<std::string> arr, int size);
+void printArrayQ(std::vector<std::string> arr, int size){
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}

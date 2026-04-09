@@ -32,4 +32,9 @@ std::vector<std::string> mergeSort(std::vector<std::string>& arr, int left, int 
 }
 
 
-void printArrayM(std::vector<std::string> arr, int size);
+void printArrayM(std::vector<std::string> arr, int size){
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}

@@ -22,3 +22,4 @@ std::vector<std::string> leerDatos(const std::string& ruta) {
     }
     return datos;
 }
+
