@@ -3,8 +3,8 @@
 Ordering Methods
 Comparación de Algoritmos de Ordenamiento en C++
 
-Jerónimo Vélez
-Jerónimo Echeverry
+Jerónimo Vélez,
+Jerónimo Echeverry,
 Sebastian Roldan •  2025
 
 
