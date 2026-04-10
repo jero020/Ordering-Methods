@@ -11,6 +11,7 @@
 std::vector<std::string> datos;
 
 int main() {
+    std::vector<std::string> datos;
     try {
         datos = leerDatos("dataset2.txt");
     } catch (const std::exception& e) {
@@ -18,42 +19,39 @@ int main() {
         return 1;
     }
 
-    auto start = std::chrono::high_resolution_clock::now();
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> duration = end - start;
-
+    // Copia fresca para cada algoritmo
+    std::vector<std::string> copia1 = datos;
+    std::vector<std::string> copia2 = datos;
+    std::vector<std::string> copia3 = datos;
+    std::vector<std::string> copia4 = datos;
 
     // Quick Sort
-    start = std::chrono::high_resolution_clock::now();
-    quickSortHelper(datos, 0, (int)datos.size()/2);
-    end = std::chrono::high_resolution_clock::now();
-    duration = end - start;
+    auto start = std::chrono::high_resolution_clock::now();
+    quickSortHelper(copia1, 0, (int)copia1.size() - 1); // ✅ size - 1
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> duration = end - start;
     std::cout << "Quick Sort tomó " << duration.count() << " ms" << std::endl;
-    std::cout << "quick sorted" << std::endl;
 
     // Insertion Sort
     start = std::chrono::high_resolution_clock::now();
-    insertionSort(datos);
+    insertionSort(copia2); // ✅ copia fresca
     end = std::chrono::high_resolution_clock::now();
     duration = end - start;
     std::cout << "Insertion Sort tomó " << duration.count() << " ms" << std::endl;
-    std::cout << "insertion sorted" << std::endl;
 
     // Merge Sort
     start = std::chrono::high_resolution_clock::now();
-    mergeSort(datos, 0, (int)datos.size() - 1);
+    mergeSort(copia3, 0, (int)copia3.size() - 1); // ✅ copia fresca
     end = std::chrono::high_resolution_clock::now();
     duration = end - start;
     std::cout << "Merge Sort tomó " << duration.count() << " ms" << std::endl;
-    std::cout << "merge sorted" << std::endl;
 
     // Bubble Sort
     start = std::chrono::high_resolution_clock::now();
-    bubbleSort(datos, (int)datos.size());
+    bubbleSort(copia4, (int)copia4.size()); // ✅ copia fresca
     end = std::chrono::high_resolution_clock::now();
     duration = end - start;
     std::cout << "Bubble Sort tomó " << duration.count() << " ms" << std::endl;
-    std::cout << "bubble sorted" << std::endl;
 
     return 0;
 }
