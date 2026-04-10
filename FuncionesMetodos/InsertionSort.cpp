@@ -2,7 +2,7 @@
 #include "../Leerdatos.h"
 #include <iostream>
 
-std::vector<std::string> insertionSort(std::vector<std::string>& arr) {
+void insertionSort(std::vector<std::string>& arr) {
     int n = arr.size();
     for (int i = 1; i < n; i++) {
         std::string key = arr[i];
@@ -13,7 +13,6 @@ std::vector<std::string> insertionSort(std::vector<std::string>& arr) {
         }
         arr[j + 1] = key;
     }
-    return arr;
 }
 
 

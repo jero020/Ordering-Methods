@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-std::vector<std::string> insertionSort(std::vector<std::string>& arr);
+void insertionSort(std::vector<std::string>& arr);
 void printArrayI(std::vector<std::string> arr, int size);
 
 #endif

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 // Función que implementa el algoritmo de Bubble Sort
-std::vector<std::string> bubbleSort(std::vector<std::string>& arr, int n) {
+void bubbleSort(std::vector<std::string>& arr, int n) {
     // Bucle externo para controlar el número de pasadas
     for (int i = 0; i < n - 1; i++) {
         // Bucle interno para comparar elementos adyacentes
@@ -16,7 +16,6 @@ std::vector<std::string> bubbleSort(std::vector<std::string>& arr, int n) {
             }
         }
     }
-    return arr;
 
 }
 

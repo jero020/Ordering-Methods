@@ -3,6 +3,10 @@
 #include <iostream>
 
 int partition(std::vector<std::string>& arr, int low, int high) {
+    // Usar elemento aleatorio como pivot
+    int random_idx = low + rand() % (high - low + 1);
+    std::swap(arr[random_idx], arr[high]);  // Mover a final
+    
     std::string pivot = arr[high];
     int i = low - 1;
 
@@ -16,14 +20,13 @@ int partition(std::vector<std::string>& arr, int low, int high) {
     return i + 1;
 }
 
-std::vector<std::string> quickSort(std::vector<std::string>& arr, int low, int high) {
+void quickSortHelper(std::vector<std::string>& arr, int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+        quickSortHelper(arr, low, pi - 1);
+        quickSortHelper(arr, pi + 1, high);
     
     }
-    return arr;
 }
 
 
